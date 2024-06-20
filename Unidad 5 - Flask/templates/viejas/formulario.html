@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+        <title> Página de ejemplo xde </title>  <!-- Título de la página en NAVEGACIÓN -->
+        <font face = "Bookman Old Style">xd   <!-- Cambiar la fuente de la letra -->
+        <h1> Registrar Usuario </h1>            <!-- Distintos tamaños para los headings/títulos -->
+        <h2> Registrar Usuario </h2>
+        <h3> Registrar Usuario </h3>
+        <hr/>                                 <!-- Separación visual, parecida al "br" -->
+            <form action = "http://localhost:5000/alta" method = "post"> <!-- Se utiliza el método "post" para el ENVÍO del formulario -->
+ 
+        <!-- La línea <form action="http://localhost:5000/alta" method="post"> define un formulario en HTML que enviará datos al servidor local indicado, utilizando el método HTTP POST. Esto permite al usuario ingresar información como nombre, correo electrónico y contraseña, y luego enviar estos datos al SERVIDOR para su procesamiento adicional, como registro de usuarios, envío de comentarios, o cualquier otra acción que el servidor esté configurado para manejar. -->
+            
+            <label for = "name"> Nombre </label>
+            <br>
+            <input type = "text" name = "name" />
+            <br>
+            <br>                                        <!-- "br" o BREAK se utiliza para el espaciado entre cada elemento -->
+            <label for = "email">Email</label>
+            <br>
+            <input type = "text" name = "email" />
+            <br>
+            <br>
+            <label for = "clave"> Contraseña </label>
+            <br>
+            <input type = "password" name = "clave" />
+            <br>  <!-- Cuando el "type" es "password", la contraseña ingresada se ve a puntos -->
+            <br>
+            <input type = "submit" value = "APA la papa" style="font-family: 'Bookman Old Style'; font-size: 15px;"/> 
+            <!-- El type = "submit" permite añadir un botón de envío-->
+            <!-- Si no se especifica el font-size, se coloca por defecto -->
+
+            </form>
+        </font>         <!-- Para que la fuente aplique a todo el cuerpo de la página -->
+    </body>
+
+</html>
