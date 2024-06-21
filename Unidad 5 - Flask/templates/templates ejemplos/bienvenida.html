@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenida</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+</head>
+<body>
+    <h1>Bienvenido, {{ datos['nombre'] }}</h1>
+    <p>Tu correo electrónico es {{ datos['email'] }}.</p>
+    <p>La hora actual es {{ hora }}.</p>
+</body>
+</html>

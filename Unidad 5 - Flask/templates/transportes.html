@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Lista de Transportes</h2>
+<ul>
+    {% for transporte in transportes %}
+    <li>{{ transporte.numerotransporte }} - Salida: {{ transporte.fechahorasalida }} - Llegada: {{ transporte.fechahorallegada }}</li>
+    {% endfor %}
+</ul>
+<h2>Agregar Transporte</h2>
+<form method="POST" action="/transportes">
+    <div class="form-group">
+        <label for="numerotransporte">Número de Transporte</label>
+        <input type="text" class="form-control" id="numerotransporte" name="numerotransporte" required>
+    </div>
+    <div class="form-group">
+        <label for="fechahorasalida">Fecha y Hora de Salida</label>
+        <input type="datetime-local" class="form-control" id="fechahorasalida" name="fechahorasalida" required>
+    </div>
+    <div class="form-group">
+        <label for="idsucursal">ID Sucursal</label>
+        <input type="number" class="form-control" id="idsucursal" name="idsucursal" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar Transporte</button>
+</form>
+{% endblock %}

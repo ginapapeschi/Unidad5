@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Lista de Paquetes</h2>
+<ul>
+    {% for paquete in paquetes %}
+    <li>{{ paquete.numeroenvio }} - {{ paquete.peso }} kg - {{ paquete.nomdestino }} - {{ paquete.dirdestino }} - Entregado: {{ paquete.entregado }}</li>
+    {% endfor %}
+</ul>
+<h2>Agregar Paquete</h2>
+<form method="POST" action="/paquetes">
+    <div class="form-group">
+        <label for="numeroenvio">Número de Envío</label>
+        <input type="text" class="form-control" id="numeroenvio" name="numeroenvio" required>
+    </div>
+    <div class="form-group">
+        <label for="peso">Peso (kg)</label>
+        <input type="number" step="0.01" class="form-control" id="peso" name="peso" required>
+    </div>
+    <div class="form-group">
+        <label for="nomdestino">Nombre del Destinatario</label>
+        <input type="text" class="form-control" id="nomdestino" name="nomdestino" required>
+    </div>
+    <div class="form-group">
+        <label for="dirdestino">Dirección del Destinatario</label>
+        <input type="text" class="form-control" id="dirdestino" name="dirdestino" required>
+    </div>
+    <div class="form-group">
+        <label for="idsucursal">ID Sucursal</label>
+        <input type="number" class="form-control" id="idsucursal" name="idsucursal" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar Paquete</button>
+</form>
+{% endblock %}

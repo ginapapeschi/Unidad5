@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang = "es">
+    <head>                                          <!-- Encabezado -->
+        <meta charset="UTF-8">                      <!-- Compatibilidad de caracteres-->
+        <title> {% block title %}{%endblock%} </title> <!-- BLOQUE PARA EL TÍTULO -->
+        <!--Define un bloque de plantilla Jinja2 llamado "title". Esto permite que las PLANTILLAS que HEREDEN de esta plantilla base definan su PROPIO título -->
+
+        <link rel="stylesheet" href="{{ url_for("static", filename="css/estilos.css") }}">
+        <!-- Incluye una hoja de estilos CSS EXTERNA. La función "url_for" de Flask se usa para GENERAR la URL para el archivo CSS que se encuentra en el directorio "static/css" -->
+
+    </head>
+
+    <body>
+        {% block content %}{% endblock %}      <!-- BLOQUE PARA EL CONTENIDO -->
+        <!-- Define OTRO bloque de plantilla llamado "content". Esto permite que las PLANTILLAS HIJAS inserten contenido ESPECÍFICO en esta sección del cuerpo -->
+
+        <div class="myDiv">
+        <!-- Define un CONTENEDOR div con la clase CSS myDiv, que puede ser estilizado en el archivo CSS EXTERNO -->
+        
+            <br>
+            <br>
+            <a href = "{{ url_for ("inicio") }}" > Inicio </a>
+            <!-- Crea un ENLACE que apunta a la RUTA INICIO. La función "url_for" de Flask GENERA la URL correspondiente a esta ruta. Esto es útil para mantener las rutas consistentes y manejables -->
+
+            <!-- Un archivo html que REUTILICE una plantilla base deberá indicarlo a través de la ETIQUETA {% extends %} y además incluir el CONTENIDO para cada bloque definido en la plantilla base -->
+
+            <br>
+            <br>
+        </div> 
+    </body>
+
+</html>
